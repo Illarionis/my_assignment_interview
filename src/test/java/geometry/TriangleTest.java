@@ -1,0 +1,119 @@
+package geometry;
+
+import logic.PolygonClassifier;
+import logic.TriangleClassifier;
+import org.junit.jupiter.api.Test;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import static org.junit.jupiter.api.Assertions.*;
+
+class TriangleTest {
+
+    @Test
+    void defaultTriangle_hasNullSidesAndHasUndeterminedType() {
+        Triangle t = new Triangle();
+        assertNull(t.getSides());
+        assertEquals(TriangleType.UNDETERMINED, t.getTriangleType());
+    }
+
+    @Test
+    void constructsFromSides(){
+        List<Double> sides = List.of(3.0, 4.0, 5.0);
+        Triangle t = new Triangle(sides);
+
+        assertEquals(List.of(3.0, 4.0, 5.0), t.getSides());
+    }
+
+    @Test
+    void setSides_updatesSides(){
+        List<Double> sides = List.of(3.0, 4.0, 5.0);
+        Triangle t = new Triangle(sides);
+
+        t.setSides(List.of(6.0, 6.0, 6.0));
+        assertEquals(List.of(6.0, 6.0, 6.0), t.getSides());
+    }
+
+    @Test
+    void setSides_updatesType(){
+        List<Double> sides = List.of(3.0, 4.0, 5.0);
+        Triangle t = new Triangle(sides);
+
+        t.setSides(List.of(6.0, 6.0, 6.0));
+        assertEquals(TriangleType.EQUILATERAL, t.getTriangleType());
+    }
+
+    @Test
+    void triangleType_isUpdatedAndRetrieved(){
+        Triangle t = new Triangle();
+        assertEquals(TriangleType.UNDETERMINED, t.getTriangleType());
+        assertEquals("Undetermined", t.getTriangleTypeStr());
+
+        t.setTriangleType(TriangleType.EQUILATERAL);
+        assertEquals(TriangleType.EQUILATERAL, t.getTriangleType());
+        assertEquals("Equilateral", t.getTriangleTypeStr());
+
+        t.setTriangleType(TriangleType.ISOSCELES);
+        assertEquals(TriangleType.ISOSCELES, t.getTriangleType());
+        assertEquals("Isosceles", t.getTriangleTypeStr());
+
+        t.setTriangleType(TriangleType.SCALENE);
+        assertEquals(TriangleType.SCALENE, t.getTriangleType());
+        assertEquals("Scalene", t.getTriangleTypeStr());
+    }
+
+    @Test
+    void getSidesCount_throws_IllegalArgumentException_forNullSides(){
+        Triangle t = new Triangle();
+        assertThrows(IllegalStateException.class, ()->{t.getSidesCount();});
+    }
+
+    @Test
+    void getSidesCount_hasCorrectAmount(){
+        Triangle t = new Triangle();
+        t.setSides(List.of(3.0, 4.0, 5.0));
+        assertEquals(3, t.getSidesCount());
+    }
+
+    @Test
+    void getPerimeter_throws_IllegalArgumentException_forNullSides(){
+        Triangle t = new Triangle();
+        assertThrows(IllegalStateException.class, ()->{t.getPerimeter();});
+    }
+
+    @Test
+    void getPerimeter_isCorrect(){
+        Triangle t = new Triangle();
+
+        t.setSides(List.of(3.0, 4.0, 5.0));
+        assertEquals(12.0, t.getPerimeter());
+
+        t.setSides(List.of(3.0, 3.0, 3.0));
+        assertEquals(9.0, t.getPerimeter());
+
+        t.setSides(List.of(5.0, 5.0, 6.0));
+        assertEquals(16.0, t.getPerimeter());
+    }
+
+    @Test
+    void getArea_throws_IllegalArgumentException_forNullSides(){
+        Triangle t = new Triangle();
+        assertThrows(IllegalStateException.class, ()->{t.getArea();});
+    }
+
+    @Test
+    void getArea_isCorrect(){
+        Triangle t = new Triangle();
+
+        t.setSides(List.of(3.0, 4.0, 5.0));
+        assertEquals(6.0, t.getArea(), 1e-3);
+
+        t.setSides(List.of(3.0, 3.0, 3.0));
+        assertEquals(3.897, t.getArea(), 1e-3);
+
+        t.setSides(List.of(5.0, 5.0, 6.0));
+        assertEquals(12.0, t.getArea(), 1e-3);
+
+    }
+}

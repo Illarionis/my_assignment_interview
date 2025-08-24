@@ -1,0 +1,18 @@
+package geometry;
+
+public enum TriangleType implements PolygonType{
+    EQUILATERAL("Equilateral"), // equilateral
+    ISOSCELES("Isosceles"), // isosceles
+    SCALENE("Scalene"), // scalene
+    UNDETERMINED("Undetermined");  // none, type is not determined yet
+
+    private final String name;
+
+    TriangleType(String name){
+        this.name = name;
+    }
+    @Override
+    public String toString(){
+        return this.name;
+    }
+}
