@@ -2,6 +2,9 @@
 
     import java.util.List;
 
+    /**
+     * Generalize any polygon: triangle, rectangle, pentagon etc
+     */
     public interface Polygon {
         List<Double> getSides();
         void setSides(List<Double> sides);

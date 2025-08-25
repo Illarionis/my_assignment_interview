@@ -15,11 +15,13 @@ public class Triangle implements Polygon {
     // used for triangle type identification and validation
     private final TriangleClassifier classifier = new TriangleClassifier();
 
+    // Creates a triangle without sides
     public Triangle(){
         this.sides = null;
         this.triangleType = TriangleType.UNDETERMINED;
     }
 
+    // Creates a triangle given side lengths
     public Triangle (List<Double> sides){
         this.sides = sides;
         this.triangleType = classifier.classify(this.sides);
@@ -30,13 +32,13 @@ public class Triangle implements Polygon {
         return this.sides;
     }
 
+    // Updates the sides, reclassifies accordingly
     @Override
     public void setSides(List<Double> sides) {
         this.sides = sides;
         this.triangleType = classifier.classify(this.sides);
     }
 
-    // Type of triangle, an enum constant of TriangleType
     public TriangleType getTriangleType(){
         return this.triangleType;
     }

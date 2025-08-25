@@ -10,6 +10,12 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
+/**
+ * A more complex class for running the app
+ * Allows for multiple triangle inputs
+ * Displays all entered triangles
+ * Loops back if invalid
+ */
 public class Run {
 
     PolygonManager manager;

@@ -5,7 +5,9 @@ import geometry.Triangle;
 import java.util.ArrayList;
 import java.util.List;
 
-// Stores and retrieves the Triangle instances needed for the app to function
+/**
+ * Container, storing and retrieving Triangle instances
+ */
 public class TriangleManager implements PolygonManager<Triangle>{
     private final List<Triangle> triangles;
 

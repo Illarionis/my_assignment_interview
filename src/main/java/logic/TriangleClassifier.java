@@ -2,11 +2,14 @@ package logic;
 
 import geometry.TriangleType;
 
-import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Identifies a triangle's type in accordance to TriangleType
+ * Validates whether a triangle is valid or not
+ */
 public class TriangleClassifier implements PolygonClassifier<TriangleType>{
-    // Identifies the triangle type based on side lengths.
+    // Identifies the triangle type based on side lengths
     // (Equilateral, Isosceles, Scalene)
     @Override
     public TriangleType classify(List<Double> sides){
@@ -31,10 +34,12 @@ public class TriangleClassifier implements PolygonClassifier<TriangleType>{
         return TriangleType.SCALENE;
     }
 
-    // Checking for triangles that:
-    //  - do not have 3 sides
-    //  - have non-positive side lengths
-    //  - violate the triangle inequality (any pairwise sum of sides must be greater than the other side)
+    // Checking whether a triangle is valid, returns:
+    // 0 - valid
+    // 1 - doesn't have 3 sides
+    // 2 - has negative side(s)
+    // 3 - violates the triangle inequality
+    //     (sum of any two sides' lengths has to be greater than the length of the other side)
     @Override
     public int validate(List<Double> sides){
         // Check for valid number of sides
