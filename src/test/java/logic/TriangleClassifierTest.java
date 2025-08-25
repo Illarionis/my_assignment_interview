@@ -10,7 +10,7 @@ import static org.junit.jupiter.api.Assertions.*;
 class TriangleClassifierTest {
     @Test
     void classify_Undetermined(){
-        TriangleClassifier c = new TriangleClassifier();
+        TriangleProcessor c = new TriangleProcessor();
         TriangleType cType;
 
         // Cannot determine triangle type if the number of sides is invalid
@@ -30,7 +30,7 @@ class TriangleClassifierTest {
 
     @Test
     void classify_Equilateral(){
-        TriangleClassifier c = new TriangleClassifier();
+        TriangleProcessor c = new TriangleProcessor();
         TriangleType cType;
 
         // All sides match
@@ -54,7 +54,7 @@ class TriangleClassifierTest {
 
     @Test
     void classify_Isosceles(){
-        TriangleClassifier c = new TriangleClassifier();
+        TriangleProcessor c = new TriangleProcessor();
         TriangleType cType;
 
         // Two sides match
@@ -74,7 +74,7 @@ class TriangleClassifierTest {
 
     @Test
     void classify_Scalene(){
-        TriangleClassifier c = new TriangleClassifier();
+        TriangleProcessor c = new TriangleProcessor();
         TriangleType cType;
 
         // No sides match
@@ -99,7 +99,7 @@ class TriangleClassifierTest {
 
     @Test
     void validate_InvalidSize(){
-        TriangleClassifier c = new TriangleClassifier();
+        TriangleProcessor c = new TriangleProcessor();
         int validId;
 
         // 0 sides
@@ -119,7 +119,7 @@ class TriangleClassifierTest {
 
     @Test
     void validate_NonPositive(){
-        TriangleClassifier c = new TriangleClassifier();
+        TriangleProcessor c = new TriangleProcessor();
         int validId;
 
         // A negative or a zero side
@@ -143,7 +143,7 @@ class TriangleClassifierTest {
 
     @Test
     void validate_InvalidTriangleInequality(){
-        TriangleClassifier c = new TriangleClassifier();
+        TriangleProcessor c = new TriangleProcessor();
         int validId;
 
         // Invalid triangles
@@ -172,7 +172,7 @@ class TriangleClassifierTest {
 
     @Test
     void validate_Valid(){
-        TriangleClassifier c = new TriangleClassifier();
+        TriangleProcessor c = new TriangleProcessor();
         int validId;
 
         // Valid triangles

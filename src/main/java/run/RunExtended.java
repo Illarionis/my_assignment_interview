@@ -1,9 +1,9 @@
 package run;
 
 import geometry.Triangle;
-import logic.PolygonClassifier;
+import logic.PolygonProcessor;
 import logic.PolygonManager;
-import logic.TriangleClassifier;
+import logic.TriangleProcessor;
 import logic.TriangleManager;
 
 import java.util.ArrayList;
@@ -20,12 +20,12 @@ public class RunExtended {
 
     PolygonManager manager;
     Scanner scanner;
-    PolygonClassifier classifier;
+    PolygonProcessor processor; // used only for validation of triangle sides before Triangle initialization
 
     RunExtended(){
         manager = new TriangleManager();
         scanner = new Scanner(System.in);
-        classifier = new TriangleClassifier();
+        processor = new TriangleProcessor();
     }
 
     // Reading each polygon side from user input in terminal
@@ -55,7 +55,7 @@ public class RunExtended {
         while (!validSides) {
             List<Double> sides = this.receiveInput();
 
-            int validityId = classifier.validate(sides);
+            int validityId = processor.validate(sides);
             switch (validityId){
                 case 0:
                     validSides = true;

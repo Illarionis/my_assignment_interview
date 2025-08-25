@@ -1,6 +1,6 @@
 package geometry;
 
-import logic.TriangleClassifier;
+import logic.TriangleProcessor;
 
 import java.util.List;
 
@@ -13,7 +13,7 @@ public class Triangle implements Polygon {
     private TriangleType triangleType;
 
     // used for triangle type identification and validation
-    private final TriangleClassifier classifier = new TriangleClassifier();
+    private final TriangleProcessor processor = new TriangleProcessor();
 
     // Creates a triangle without sides
     public Triangle(){
@@ -24,7 +24,7 @@ public class Triangle implements Polygon {
     // Creates a triangle given side lengths
     public Triangle (List<Double> sides){
         this.sides = sides;
-        this.triangleType = classifier.classify(this.sides);
+        this.triangleType = processor.classify(this.sides);
     }
 
     @Override
@@ -36,7 +36,7 @@ public class Triangle implements Polygon {
     @Override
     public void setSides(List<Double> sides) {
         this.sides = sides;
-        this.triangleType = classifier.classify(this.sides);
+        this.triangleType = processor.classify(this.sides);
     }
 
     public TriangleType getTriangleType(){

@@ -1,10 +1,7 @@
 package geometry;
 
-import logic.PolygonClassifier;
-import logic.TriangleClassifier;
 import org.junit.jupiter.api.Test;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;

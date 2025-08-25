@@ -8,7 +8,7 @@ import java.util.List;
  * Identifies a triangle's type in accordance to TriangleType
  * Validates whether a triangle is valid or not
  */
-public class TriangleClassifier implements PolygonClassifier<TriangleType>{
+public class TriangleProcessor implements PolygonProcessor<TriangleType> {
     // Identifies the triangle type based on side lengths
     // (Equilateral, Isosceles, Scalene)
     @Override

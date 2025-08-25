@@ -1,8 +1,8 @@
 package run;
 
 import geometry.Triangle;
-import logic.PolygonClassifier;
-import logic.TriangleClassifier;
+import logic.PolygonProcessor;
+import logic.TriangleProcessor;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -36,7 +36,7 @@ public class RunBasic {
         }
 
         // Validate and classify the triangle
-        PolygonClassifier classifier = new TriangleClassifier();
+        PolygonProcessor classifier = new TriangleProcessor();
         switch (classifier.validate(sides)){
             case 0:
                 Triangle triangle = new Triangle(sides);
