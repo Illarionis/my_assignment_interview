@@ -16,13 +16,13 @@ import java.util.Scanner;
  * Displays all entered triangles
  * Loops back if invalid
  */
-public class Run {
+public class RunExtended {
 
     PolygonManager manager;
     Scanner scanner;
     PolygonClassifier classifier;
 
-    Run(){
+    RunExtended(){
         manager = new TriangleManager();
         scanner = new Scanner(System.in);
         classifier = new TriangleClassifier();
@@ -86,12 +86,14 @@ public class Run {
     public void startProgram(){
         boolean exit = false;
         while (!exit){
+            // Display current state
             int triangleCount = manager.getCount();
             System.out.println("\nYou currently have " + triangleCount + " triangles");
             if (triangleCount > 0){
                 outputTriangles(triangleCount);
             }
 
+            // User menu: add another triangle or exit
             while (true){
                 System.out.println("Add a new triangle or exit the program? Type 'add' or 'exit':");
                 String menuInput = scanner.nextLine().trim();
@@ -99,6 +101,7 @@ public class Run {
                     exit = true;
                     break;
                 }
+                // processTriangleInput() receives inputs and passes them to processing
                 if (menuInput.equalsIgnoreCase("add")){
                     this.processTriangleInput();
                     break;
@@ -112,20 +115,7 @@ public class Run {
     }
 
     public static void main(String[] args) {
-//        ArrayList<Double> sides = new ArrayList<>();
-//        sides.add(3.0);
-//        sides.add(3.0);
-//        sides.add(3.0);
-//        Triangle triangle = new Triangle(sides);
-//        System.out.println(triangle.getTriangleTypeStr());
-//
-//        TriangleType newType = TriangleSolver.solveType(triangle);
-//        triangle.setTriangleType(newType);
-//        System.out.println(triangle.getTriangleTypeStr());
-//
-//        System.out.println(TriangleSolver.getTrianglePerimeter(triangle));
-//        System.out.println(TriangleSolver.getTriangleArea(triangle));
-        Run runner = new Run();
+        RunExtended runner = new RunExtended();
         runner.startProgram();
     }
 }
