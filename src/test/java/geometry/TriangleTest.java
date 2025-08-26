@@ -12,7 +12,7 @@ class TriangleTest {
     void defaultTriangle_hasNullSidesAndHasUndeterminedType() {
         Triangle t = new Triangle();
         assertNull(t.getSides());
-        assertEquals(TriangleType.UNDETERMINED, t.getType());
+        assertEquals(TriangleType.UNDEFINED, t.getType());
     }
 
     @Test
@@ -44,8 +44,8 @@ class TriangleTest {
     @Test
     void triangleType_isUpdatedAndRetrieved(){
         Triangle t = new Triangle();
-        assertEquals(TriangleType.UNDETERMINED, t.getType());
-        assertEquals("Undetermined", t.getTypeStr());
+        assertEquals(TriangleType.UNDEFINED, t.getType());
+        assertEquals("Undefined", t.getTypeStr());
 
         t.setType(TriangleType.EQUILATERAL);
         assertEquals(TriangleType.EQUILATERAL, t.getType());

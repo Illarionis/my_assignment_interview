@@ -18,7 +18,7 @@ public class Triangle implements Polygon<TriangleType> {
     // Creates a triangle without sides
     public Triangle(){
         this.sides = null;
-        this.triangleType = TriangleType.UNDETERMINED;
+        this.triangleType = TriangleType.UNDEFINED;
     }
 
     // Creates a triangle given side lengths

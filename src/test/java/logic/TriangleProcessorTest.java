@@ -15,16 +15,16 @@ class TriangleProcessorTest {
 
         // Cannot determine triangle type if the number of sides is invalid
         cType = c.classify(List.of());
-        assertEquals(TriangleType.UNDETERMINED, cType);
+        assertEquals(TriangleType.UNDEFINED, cType);
 
         cType = c.classify(List.of(3.0));
-        assertEquals(TriangleType.UNDETERMINED, cType);
+        assertEquals(TriangleType.UNDEFINED, cType);
 
         cType = c.classify(List.of(3.0, 4.0));
-        assertEquals(TriangleType.UNDETERMINED, cType);
+        assertEquals(TriangleType.UNDEFINED, cType);
 
         cType = c.classify(List.of(3.0, 4.0, 5.0, 6.0));
-        assertEquals(TriangleType.UNDETERMINED, cType);
+        assertEquals(TriangleType.UNDEFINED, cType);
 
     }
 

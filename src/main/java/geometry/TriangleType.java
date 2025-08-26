@@ -7,7 +7,7 @@ public enum TriangleType implements PolygonType{
     EQUILATERAL("Equilateral"), // equilateral
     ISOSCELES("Isosceles"), // isosceles
     SCALENE("Scalene"), // scalene
-    UNDETERMINED("Undetermined");  // none, type is not determined yet
+    UNDEFINED("Undefined");  // none, type is not determined yet
 
     private final String name;
 

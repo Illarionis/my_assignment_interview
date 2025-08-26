@@ -22,7 +22,7 @@ public class RunBasic {
         List<Double> sides = new ArrayList<>();
         int i = 0;
         while (i < 3){
-            System.out.print("Please enter side " + (i+1) + ": ");
+            System.out.print("Please enter length of side " + (i+1) + ": ");
             String input = scanner.nextLine().trim();
 
             try{

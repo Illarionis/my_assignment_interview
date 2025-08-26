@@ -15,7 +15,7 @@ public class TriangleProcessor implements PolygonProcessor<TriangleType> {
     public TriangleType classify(List<Double> sides){
         // Check for valid number of sides
         if (sides.size() != 3){
-            return TriangleType.UNDETERMINED;
+            return TriangleType.UNDEFINED;
         }
 
         double a = sides.get(0);
