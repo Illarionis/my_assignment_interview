@@ -7,7 +7,7 @@ import java.util.List;
 /**
  * Represents the Triangle shape
  */
-public class Triangle implements Polygon {
+public class Triangle implements Polygon<TriangleType> {
 
     private List<Double> sides;
     private TriangleType triangleType;
@@ -39,15 +39,18 @@ public class Triangle implements Polygon {
         this.triangleType = processor.classify(this.sides);
     }
 
-    public TriangleType getTriangleType(){
+    @Override
+    public TriangleType getType(){
         return this.triangleType;
     }
 
-    public void setTriangleType(TriangleType triangleType){
-        this.triangleType = triangleType;
+    @Override
+    public void setType(TriangleType type){
+        this.triangleType = type;
     }
 
-    public String getTriangleTypeStr(){
+    @Override
+    public String getTypeStr(){
         return this.triangleType.toString();
     }
 

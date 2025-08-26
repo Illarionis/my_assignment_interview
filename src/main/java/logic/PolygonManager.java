@@ -12,5 +12,7 @@ public interface PolygonManager<T extends Polygon> {
     void add(T p);
     List<T> getAll();
     T getById(int id);
+    void removeById(int id);
+    void removeAll();
     int getCount();
 }

@@ -31,6 +31,16 @@ public class TriangleManager implements PolygonManager<Triangle>{
     }
 
     @Override
+    public void removeById(int id) {
+        this.triangles.remove(id);
+    }
+
+    @Override
+    public void removeAll() {
+        this.triangles.removeAll(this.triangles);
+    }
+
+    @Override
     public int getCount(){
         return this.triangles.size();
     }

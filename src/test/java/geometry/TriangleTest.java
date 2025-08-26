@@ -12,7 +12,7 @@ class TriangleTest {
     void defaultTriangle_hasNullSidesAndHasUndeterminedType() {
         Triangle t = new Triangle();
         assertNull(t.getSides());
-        assertEquals(TriangleType.UNDETERMINED, t.getTriangleType());
+        assertEquals(TriangleType.UNDETERMINED, t.getType());
     }
 
     @Test
@@ -38,26 +38,26 @@ class TriangleTest {
         Triangle t = new Triangle(sides);
 
         t.setSides(List.of(6.0, 6.0, 6.0));
-        assertEquals(TriangleType.EQUILATERAL, t.getTriangleType());
+        assertEquals(TriangleType.EQUILATERAL, t.getType());
     }
 
     @Test
     void triangleType_isUpdatedAndRetrieved(){
         Triangle t = new Triangle();
-        assertEquals(TriangleType.UNDETERMINED, t.getTriangleType());
-        assertEquals("Undetermined", t.getTriangleTypeStr());
+        assertEquals(TriangleType.UNDETERMINED, t.getType());
+        assertEquals("Undetermined", t.getTypeStr());
 
-        t.setTriangleType(TriangleType.EQUILATERAL);
-        assertEquals(TriangleType.EQUILATERAL, t.getTriangleType());
-        assertEquals("Equilateral", t.getTriangleTypeStr());
+        t.setType(TriangleType.EQUILATERAL);
+        assertEquals(TriangleType.EQUILATERAL, t.getType());
+        assertEquals("Equilateral", t.getTypeStr());
 
-        t.setTriangleType(TriangleType.ISOSCELES);
-        assertEquals(TriangleType.ISOSCELES, t.getTriangleType());
-        assertEquals("Isosceles", t.getTriangleTypeStr());
+        t.setType(TriangleType.ISOSCELES);
+        assertEquals(TriangleType.ISOSCELES, t.getType());
+        assertEquals("Isosceles", t.getTypeStr());
 
-        t.setTriangleType(TriangleType.SCALENE);
-        assertEquals(TriangleType.SCALENE, t.getTriangleType());
-        assertEquals("Scalene", t.getTriangleTypeStr());
+        t.setType(TriangleType.SCALENE);
+        assertEquals(TriangleType.SCALENE, t.getType());
+        assertEquals("Scalene", t.getTypeStr());
     }
 
     @Test

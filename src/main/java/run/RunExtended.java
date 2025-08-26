@@ -31,7 +31,7 @@ public class RunExtended {
     // Reading each polygon side from user input in terminal
     private ArrayList<Double> receiveInput(){
         ArrayList<Double> sides = new ArrayList<>();
-
+        // TODO: Fix the bug: input side, press Enter key, erase side from terminal, side is still in the ArrList of sides
         System.out.println("\nEnter side lengths separated by Enter key (type 'done' to finish):");
         while (true){
             String input = scanner.nextLine().trim();
@@ -65,7 +65,7 @@ public class RunExtended {
                     System.out.println("Invalid number of sides. Please input 3 sides");
                     break;
                 case 2:
-                    System.out.println("Invalid side length. Please input only non-zero lengths");
+                    System.out.println("Invalid side length. Please input only positive lengths");
                     break;
                 case 3:
                     System.out.println("Invalid triangle. Please follow the triangle inequality");
@@ -78,7 +78,7 @@ public class RunExtended {
     private void outputTriangles(int triangleCount){
         for (int i = 0; i < triangleCount; i++){
             Triangle t = (Triangle) manager.getById(i);
-            System.out.println("\t" + (i+1) + ". " + t.getSides() + " - " + t.getTriangleTypeStr());
+            System.out.println("\t" + (i+1) + ". " + t.getSides() + " - " + t.getTypeStr());
         }
     }
 

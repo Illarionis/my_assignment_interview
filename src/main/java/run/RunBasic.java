@@ -40,7 +40,7 @@ public class RunBasic {
         switch (classifier.validate(sides)){
             case 0:
                 Triangle triangle = new Triangle(sides);
-                System.out.println("Your triangle " + triangle.getSides() + " is " + triangle.getTriangleTypeStr() + "!");
+                System.out.println("Your triangle " + triangle.getSides() + " is " + triangle.getTypeStr() + "!");
                 break;
             case 1:
                 System.out.println("Cannot identify triangle: the shape does not have 3 sides");
