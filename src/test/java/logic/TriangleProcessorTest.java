@@ -135,7 +135,7 @@ class TriangleProcessorTest {
         validId = c.validate(List.of(1.0, 0.0, 1.0));
         assertEquals(2, validId);
 
-        // No negative sides
+        // No negative or zero sides
         validId = c.validate(List.of(1.0, 1.0, 1.0));
         assertNotEquals(2, validId);
 

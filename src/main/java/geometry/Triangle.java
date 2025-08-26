@@ -64,6 +64,7 @@ public class Triangle implements Polygon<TriangleType> {
     // Not mentioned in the assignment
     // An expansion of the application to more complex problems
     // Polygon children classes can be used for more processing: finding its perimeter or area
+    // TODO: check for validity
     @Override
     public double getPerimeter() {
         if (this.sides == null)
@@ -77,6 +78,7 @@ public class Triangle implements Polygon<TriangleType> {
     }
 
     // Heron's formula
+    // TODO: Check for validity
     @Override
     public double getArea() {
         if (this.sides == null)
