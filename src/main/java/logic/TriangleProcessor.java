@@ -37,7 +37,7 @@ public class TriangleProcessor implements PolygonProcessor<TriangleType> {
     // Checking whether a triangle is valid, returns:
     // 0 - valid
     // 1 - doesn't have 3 sides
-    // 2 - has negative side(s)
+    // 2 - has non-positive side(s)
     // 3 - violates the triangle inequality
     //     (sum of any two sides' lengths has to be greater than the length of the other side)
     @Override
